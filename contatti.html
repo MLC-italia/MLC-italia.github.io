@@ -49,6 +49,7 @@ a.button:hover { background:#58725f; transform:translateY(-3px); box-shadow:0 6p
 form { display:flex; flex-direction:column; gap:15px; }
 input, textarea { padding:10px; border-radius:10px; border:none; font-family:"Poppins",sans-serif; font-size:1em; }
 textarea { resize: vertical; min-height:100px; }
+input[type="submit"] { cursor:pointer; }
 @media (max-width:600px) { h1 { font-size:2.2em; } .contact-card { padding:30px; } }
 </style>
 </head>
@@ -68,11 +69,13 @@ textarea { resize: vertical; min-height:100px; }
 <div class="contact-card">
   <h1>Contatti</h1>
   <p>Per richiedere informazioni o un preventivo personalizzato, contattami direttamente tramite email o telefono:</p>
-  <p><strong>Email:</strong> <a href="mailto:info@mlc.it" style="color:#fff; text-decoration:underline;">info@mlc.it</a></p>
+  <p><strong>Email:</strong> <a href="mailto:matrimoniodrive@gmail.com" style="color:#fff; text-decoration:underline;">matrimoniodrive@gmail.com</a></p>
   <p><strong>Telefono:</strong> <a href="tel:+390123456789" style="color:#fff; text-decoration:underline;">+39 012 345 6789</a></p>
 
   <p>Oppure utilizza il modulo qui sotto:</p>
-  <form action="mailto:info@mlc.it" method="post" enctype="text/plain">
+  <form action="https://formsubmit.co/matrimoniodrive@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://mlc-italia.github.io/thankyou.html">
     <input type="text" name="nome" placeholder="Il tuo nome" required>
     <input type="email" name="email" placeholder="La tua email" required>
     <textarea name="messaggio" placeholder="Scrivi il tuo messaggio..." required></textarea>
