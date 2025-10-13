@@ -7,19 +7,82 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * {margin:0;padding:0;box-sizing:border-box;}
 
   body {
     font-family:"Poppins",sans-serif;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
+    background:linear-gradient(135deg,#e8f0e8,#ffffff);
+    color:#333;
     text-align:center;
-    color:#222;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-    padding: 80px 20px 40px 20px;
+    padding:80px 20px;
+  }
+
+  h1 {
+    color:#6b8e6b;
+    text-shadow:1px 1px 2px #0002;
+    margin-bottom:40px;
+  }
+
+  section {
+    max-width:900px;
+    margin:40px auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+  }
+
+  .card {
+    flex:1 1 250px;
+    background:rgba(255,255,255,0.8);
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.15);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.25);
+  }
+
+  h2 {
+    color:#6b8e6b;
+    text-shadow:1px 1px 2px #0003;
+    margin-bottom:15px;
+  }
+
+  p {
+    font-weight:300;
+    color:#444;
+    margin-bottom:15px;
+  }
+
+  a.button {
+    display:inline-block;
+    padding:12px 25px;
+    background:#6b8e6b;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:500;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    transition:all 0.3s ease;
+  }
+
+  a.button:hover {
+    background:#5f7e5f;
+    transform:translateY(-3px);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+  }
+
+  .grafico {
+    background:rgba(255,255,255,0.9);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.1);
+    max-width:900px;
+    margin:60px auto;
   }
 
   nav {
@@ -30,112 +93,55 @@
   }
 
   .dropbtn {
-    background-color: #6B8E6B;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
+    background-color:#6b8e6b;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
   }
 
-  .dropbtn:hover {
-    background-color: #557755;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15);
-  }
-
-  .dropdown { position: relative; display: inline-block; }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .dropdown-content a {
-    color: #6B8E6B;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-weight: 500;
-  }
-  .dropdown-content a:hover { background-color: #e0e7df; }
-  .dropdown:hover .dropdown-content { display: block; }
-
-  .card {
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 700px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-    animation: fadeIn 1.5s ease;
-    color: #222;
-    text-align: left;
-    margin-bottom: 30px;
-  }
-
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-  h1 {
-    font-weight: 700;
-    font-size: 2.5em;
-    color: #6B8E6B;
-    text-shadow: 1px 1px 1px #000;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-
-  h2 {
-    font-weight: 600;
-    font-size: 1.5em;
-    color: #557755;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 1px #000;
-  }
-
-  p {
-    font-size: 1.1em;
-    font-weight: 300;
-    color: #222;
-    margin-bottom: 15px;
-  }
-
-  a.button {
+  .dropdown {
+    position: relative;
     display: inline-block;
-    padding: 12px 25px;
-    background: #6B8E6B;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
   }
 
-  a.button:hover {
-    background: #557755;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15);
+  .dropdown-content {
+    display:none;
+    position:absolute;
+    right:0;
+    background-color:#fff;
+    min-width:160px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.2);
+    border-radius:10px;
+    overflow:hidden;
   }
 
-  canvas { max-width: 700px; margin-top: 30px; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
-
-  @media(max-width:600px){
-    h1{font-size:2em;}
-    .card{padding:30px;}
+  .dropdown-content a {
+    color:#6b8e6b;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+    font-weight:500;
   }
 
+  .dropdown-content a:hover {
+    background-color:#e8f0e8;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display:block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color:#5f7e5f;
+  }
 </style>
 </head>
 <body>
 
+<!-- Menu -->
 <nav>
   <div class="dropdown">
     <button class="dropbtn">Menu ☰</button>
@@ -148,55 +154,63 @@
   </div>
 </nav>
 
-<div class="card">
-  <h1>I nostri Servizi</h1>
-  <h2>Location e allestimenti</h2>
-  <p>Proponiamo location eleganti con allestimenti personalizzati a prezzi accessibili.</p>
-  <h2>Catering e menù</h2>
-  <p>Soluzioni culinarie per ogni gusto, dai menù classici a quelli più creativi.</p>
-  <h2>Fotografia e video</h2>
-  <p>Servizi professionali per immortalare ogni momento del vostro giorno speciale.</p>
-  <h2>Consulenza e coordinamento</h2>
-  <p>Un team dedicato per seguire ogni dettaglio del matrimonio, senza stress.</p>
-</div>
+<h1>I nostri Servizi 💐</h1>
 
-<!-- Card Pacchetto Base -->
-<div class="card">
-  <h2>Pacchetto Base</h2>
-  <p>Il pacchetto ideale per chi desidera un matrimonio elegante ma economico: location semplice, catering base e decorazioni essenziali.</p>
-  <a href="contatti.html" class="button">Scopri il pacchetto</a>
-</div>
+<section>
+  <div class="card">
+    <h2>Inviti & Coordinati</h2>
+    <p>Inviti personalizzati, digitali o cartacei, coordinati con lo stile del tuo evento.</p>
+  </div>
 
-<!-- Grafico spese medie -->
-<canvas id="speseGrafico"></canvas>
+  <div class="card">
+    <h2>Reminder & Dettagli</h2>
+    <p>Reminder telematici eleganti e interattivi, con tutte le info utili per gli ospiti (anche le coordinate bancarie per i regali).</p>
+  </div>
+
+  <div class="card">
+    <h2>Sito Web del Matrimonio</h2>
+    <p>Un piccolo spazio online per condividere foto, ricordi e aggiornamenti con amici e familiari.</p>
+  </div>
+</section>
+
+<!-- Pacchetto base -->
+<section>
+  <div class="card" style="flex-basis:100%; background:rgba(107,142,107,0.1);">
+    <h2>Pacchetto Base 💍</h2>
+    <p>Il pacchetto ideale per chi desidera un matrimonio elegante ma economico: location semplice, catering base e decorazioni essenziali.</p>
+    <a href="contatti.html" class="button">Richiedi informazioni</a>
+  </div>
+</section>
+
+<!-- Grafico -->
+<div class="grafico">
+  <h2>Media spesa per persona (€)</h2>
+  <canvas id="graficoSpese"></canvas>
+</div>
 
 <script>
-const ctx = document.getElementById('speseGrafico').getContext('2d');
-const chart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Media spesa per persona'],
-    datasets: [{
-      label: 'Euro',
-      data: [75], // inserisci qui il valore medio
-      backgroundColor: ['#6B8E6B'],
-      borderColor: ['#557755'],
-      borderWidth: 2
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: { stepSize: 25 }
-      }
+  const ctx = document.getElementById('graficoSpese').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Matrimonio tradizionale', 'MLC – Pacchetto base', 'MLC – Personalizzato'],
+      datasets: [{
+        label: 'Costo medio a persona (€)',
+        data: [180, 95, 120],
+        backgroundColor: ['#d4e6d4', '#6b8e6b', '#9cbf9c'],
+        borderColor: '#4b6e4b',
+        borderWidth: 1,
+        borderRadius: 5
+      }]
     },
-    plugins: {
-      legend: { display: false },
-      tooltip: { enabled: true }
+    options: {
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { color: '#333' } },
+        x: { ticks: { color: '#333' } }
+      }
     }
-  }
-});
+  });
 </script>
 
 </body>
