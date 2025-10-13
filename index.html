@@ -1,84 +1,124 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MLC – Matrimoni Low Cost</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLC – Matrimoni Low Cost</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+    }
 
-  body {
-    font-family:"Poppins",sans-serif;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/sfondo-home.jpg') no-repeat center/cover;
-  }
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+    .dropbtn {
+      background-color: #6b8e77;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: #6b8e77;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+    .dropdown-content a:hover { background-color: #e3ede6; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown:hover .dropbtn { background-color: #58725f; }
 
-  nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
-  .dropbtn { background-color:#6b8e6b; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; }
-  .dropdown { position: relative; display: inline-block; }
-  .dropdown-content { display:none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden; }
-  .dropdown-content a { color:#6b8e6b; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
-  .dropdown-content a:hover { background-color:#e8f0e8; }
-  .dropdown:hover .dropdown-content { display:block; }
-  .dropdown:hover .dropbtn { background-color:#5f7e5f; }
+    .home-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 50px;
+      max-width: 600px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      color: #fff;
+    }
 
-  .home-card {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 40px;
-    max-width:600px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    animation: fadeIn 1.5s ease;
-  }
+    .home-card img { max-width: 140px; margin-bottom: 20px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
 
-  @keyframes fadeIn { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+    h1 {
+      font-weight: 700;
+      font-size: 3em;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.2em;
+      font-weight: 300;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
 
-  h1 { font-weight:700; font-size:3em; color:#fff; text-shadow:1px 1px 3px #000; margin-bottom:15px; }
-  p { font-size:1.2em; font-weight:300; color:#f1f1f1; margin-bottom:25px; }
-
-  a.button {
-    display:inline-block;
-    padding:12px 25px;
-    background:#6b8e6b;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:500;
-    box-shadow:0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-  }
-  a.button:hover { background:#5f7e5f; transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.4); }
-
-</style>
+    a.button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #6b8e77;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    a.button:hover {
+      background: #58725f;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
 <body>
-
-<nav>
-  <div class="dropdown">
-    <button class="dropbtn">Menu ☰</button>
-    <div class="dropdown-content">
-      <a href="index.html">Home</a>
-      <a href="chi-siamo.html">Chi Siamo</a>
-      <a href="servizi.html">Servizi</a>
-      <a href="contatti.html">Contatti</a>
+  <nav>
+    <div class="dropdown">
+      <button class="dropbtn">Menu ☰</button>
+      <div class="dropdown-content">
+        <a href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
     </div>
+  </nav>
+
+  <div class="home-card">
+    <img src="img/logo.png" alt="Logo MLC">
+    <h1>MLC</h1>
+    <p>Matrimoni Low Cost — rendiamo il giorno più bello accessibile a tutti, con stile e semplicità.</p>
+    <a href="chi-siamo.html" class="button">Scopri di più</a>
   </div>
-</nav>
-
-<div class="home-card">
-  <img src="img/logo.png" alt="Logo MLC" style="max-width:150px; margin-bottom:20px;">
-  <h1>Il tuo matrimonio da sogno</h1>
-  <p>Senza spendere una fortuna 💍<br>Ciao! Sono <strong>Stefania</strong>, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
-  <a href="chi-siamo.html" class="button">Scopri di più</a>
-</div>
-
 </body>
 </html>
