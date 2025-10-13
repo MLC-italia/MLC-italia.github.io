@@ -1,115 +1,129 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servizi – MLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:"Poppins",sans-serif;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#fff;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Servizi – MLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:"Poppins",sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
+  color:#fff;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+  padding: 100px 20px 40px;
+}
+nav {
+  position: fixed; top: 20px; right: 20px; z-index: 9999;
+}
+.dropbtn { background-color:#6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+.dropdown { position:relative; display:inline-block; }
+.dropdown-content { display:none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden; }
+.dropdown-content a { color:#6b8e77; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
+.dropdown-content a:hover { background-color:#e3ede6; }
+.dropdown:hover .dropdown-content { display:block; }
+.dropdown:hover .dropbtn { background-color:#58725f; }
 
-    nav {
-      position: fixed; top: 20px; right: 20px; z-index: 9999;
-    }
-    .dropbtn { background-color:#6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2);}
-    .dropdown { position:relative; display:inline-block; }
-    .dropdown-content { display:none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden; }
-    .dropdown-content a { color:#6b8e77; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
-    .dropdown-content a:hover { background-color:#e3ede6; }
-    .dropdown:hover .dropdown-content { display:block; }
-    .dropdown:hover .dropbtn { background-color:#58725f; }
+.content {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  animation: fadeIn 1.5s ease;
+}
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-    .content {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 1000px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-      animation: fadeIn 1.5s ease;
-    }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-    h1 {
-      font-size: 2.5em;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-      margin-bottom: 30px;
-    }
-
-    .service-box {
-      background: rgba(255,255,255,0.2);
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-
-    h2 {
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-      margin-bottom: 10px;
-    }
-
-    p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
-
-    .chart-placeholder {
-      margin-top: 30px;
-      height: 300px;
-      width: 100%;
-      border: 2px dashed rgba(255,255,255,0.5);
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2em;
-      color: rgba(255,255,255,0.8);
-    }
-  </style>
+h1 { font-size: 2.5em; color:#fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); margin-bottom: 30px; }
+.service-box {
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+h2 { color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); margin-bottom: 10px; }
+p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
+.chart-container { margin-top: 30px; background: rgba(255,255,255,0.15); padding:20px; border-radius:15px; }
+</style>
 </head>
 <body>
-  <nav>
-    <div class="dropdown">
-      <button class="dropbtn">Menu ☰</button>
-      <div class="dropdown-content">
-        <a href="index.html">Home</a>
-        <a href="chi-siamo.html">Chi Siamo</a>
-        <a href="servizi.html">Servizi</a>
-        <a href="contatti.html">Contatti</a>
-      </div>
+<nav>
+  <div class="dropdown">
+    <button class="dropbtn">Menu ☰</button>
+    <div class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="contatti.html">Contatti</a>
     </div>
-  </nav>
-
-  <div class="content">
-    <h1>Servizi</h1>
-    <div class="service-box">
-      <h2>Pacchetto Base</h2>
-      <p>Comprende la consulenza iniziale, ricerca location, e coordinamento fornitori principali (make-up, acconciatura, fotografo, musicisti).</p>
-    </div>
-
-    <div class="service-box">
-      <h2>Pacchetto Completo</h2>
-      <p>Organizzazione completa del matrimonio: dal progetto creativo agli inviti personalizzati, fino al coordinamento del giorno dell’evento.</p>
-    </div>
-
-    <div class="service-box">
-      <h2>Servizi Extra</h2>
-      <p>Realizzazione inviti digitali, reminder telematici, sito web del matrimonio e molto altro per rendere il tuo evento davvero unico.</p>
-    </div>
-
-    <div class="chart-placeholder">📊 Grafico: spesa media per persona (in aggiornamento)</div>
   </div>
+</nav>
+
+<div class="content">
+  <h1>Servizi</h1>
+
+  <div class="service-box">
+    <h2>Pacchetto Base</h2>
+    <p>Comprende la consulenza iniziale, ricerca location, e coordinamento fornitori principali (make-up, acconciatura, fotografo, musicisti).</p>
+  </div>
+
+  <div class="service-box">
+    <h2>Pacchetto Completo</h2>
+    <p>Organizzazione completa del matrimonio: dal progetto creativo agli inviti personalizzati, fino al coordinamento del giorno dell’evento.</p>
+  </div>
+
+  <div class="service-box">
+    <h2>Servizi Extra</h2>
+    <p>Realizzazione inviti digitali, reminder telematici, sito web del matrimonio e molto altro per rendere il tuo evento davvero unico.</p>
+  </div>
+
+  <!-- Grafico a barre -->
+  <div class="chart-container">
+    <canvas id="spesaGrafico"></canvas>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('spesaGrafico').getContext('2d');
+const spesaGrafico = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Italia', 'Friuli'],
+    datasets: [{
+      label: 'Spesa media a persona (€)',
+      data: [203, 175],
+      backgroundColor: ['#6b8e77', '#9dbda3'],
+      borderColor: ['#58725f', '#758e74'],
+      borderWidth: 2,
+      borderRadius: 5
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: true }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { stepSize: 20 }
+      }
+    }
+  }
+});
+</script>
+
 </body>
 </html>
