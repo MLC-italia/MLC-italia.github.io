@@ -1,121 +1,105 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLC – Matrimoni Low Cost</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLC – Matrimoni Low Cost</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
 
-    body {
-      font-family:"Poppins",sans-serif;
-      background: linear-gradient(135deg,#ffe4e1,#ffd6d6,#fff);
-      background-size:400% 400%;
-      animation: gradient 12s ease infinite;
-      color:#333;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-    }
+  body {
+    font-family:"Poppins",sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    /* Sfondo immagine + overlay */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+  }
 
-    @keyframes gradient {
-      0% { background-position:0% 50%; }
-      50% { background-position:100% 50%; }
-      100% { background-position:0% 50%; }
-    }
+  nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  .dropbtn {
+    background-color: #d63384;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .dropdown { position: relative; display: inline-block; }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .dropdown-content a {
+    color: #d63384;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+  }
+  .dropdown-content a:hover { background-color: #f8d7e2; }
+  .dropdown:hover .dropdown-content { display: block; }
+  .dropdown:hover .dropbtn { background-color: #b82d6e; }
 
-    nav {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
+  .home-card {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width:600px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    animation: fadeIn 1.5s ease;
+    color:#fff;
+  }
 
-    .dropbtn {
-      background-color: #d63384;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-    }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
 
-    .dropdown { position: relative; display: inline-block; }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .dropdown-content a {
-      color: #d63384;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-weight: 500;
-    }
-    .dropdown-content a:hover { background-color: #f8d7e2; }
-    .dropdown:hover .dropdown-content { display: block; }
-    .dropdown:hover .dropbtn { background-color: #b82d6e; }
+  .home-card img { max-width:150px; margin-bottom:20px; }
 
-    .home-card {
-      background: rgba(255,255,255,0.5);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      max-width:600px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-      animation: fadeIn 1.5s ease;
-    }
+  h1 { font-weight:700; font-size:3em; color:#ffd6d6; margin-bottom:15px; }
+  p { font-size:1.2em; font-weight:300; margin-bottom:25px; }
 
-    @keyframes fadeIn { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+  a.button {
+    display:inline-block;
+    padding:12px 25px;
+    background:#d63384;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:500;
+    transition: all 0.3s ease;
+  }
+  a.button:hover {
+    background:#b82d6e;
+    transform:translateY(-3px);
+    box-shadow: 0 4px 15px rgba(214,51,132,0.3);
+  }
 
-    .home-card img { max-width:150px; margin-bottom:20px; }
-
-    h1 { font-weight:700; font-size:3em; color:#d63384; margin-bottom:15px; }
-    p { font-size:1.2em; font-weight:300; color:#444; margin-bottom:25px; }
-
-    a.button {
-      display:inline-block;
-      padding:12px 25px;
-      background:#d63384;
-      color:white;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:500;
-      transition: all 0.3s ease;
-    }
-    a.button:hover {
-      background:#b82d6e;
-      transform:translateY(-3px);
-      box-shadow: 0 4px 15px rgba(214,51,132,0.3);
-    }
-
-    .home-image {
-      width:100%;
-      max-width:500px;
-      border-radius:15px;
-      margin-top:20px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.15);
-    }
-
-    @media (max-width:600px) {
-      h1 { font-size:2.2em; }
-      .home-card { padding:30px; }
-    }
-  </style>
+  @media (max-width:600px) {
+    h1 { font-size:2.2em; }
+    .home-card { padding:30px; }
+  }
+</style>
 </head>
 <body>
+
   <!-- Menu a tendina -->
   <nav>
     <div class="dropdown">
@@ -131,11 +115,11 @@
 
   <!-- Card principale Home -->
   <div class="home-card">
-    <img src="logo.png" alt="Logo MLC">
+    <img src="img/logo.png" alt="Logo MLC">
     <h1>MLC</h1>
     <p>Matrimoni Low Cost – rendiamo il giorno più bello accessibile a tutti, con stile e semplicità.</p>
     <a href="chi-siamo.html" class="button">Scopri di più</a>
-    <img src="foto-esempio.jpg" alt="Esempio matrimonio" class="home-image">
   </div>
+
 </body>
 </html>
