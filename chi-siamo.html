@@ -1,105 +1,78 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chi Siamo – MLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: "Poppins", sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-    }
-    nav {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-    }
-    .dropbtn {
-      background-color: #6b8e77;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .dropdown { position: relative; display: inline-block; }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .dropdown-content a {
-      color: #6b8e77;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-weight: 500;
-    }
-    .dropdown-content a:hover { background-color: #e3ede6; }
-    .dropdown:hover .dropdown-content { display: block; }
-    .dropdown:hover .dropbtn { background-color: #58725f; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Siamo – MLC</title>
+<meta name="description" content="Chi siamo – MLC, wedding planner specializzata in matrimoni low cost e pieni di stile in Friuli.">
+<meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, Friuli, MLC">
+<meta name="author" content="MLC – Stefania">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+/* Stesso stile di index.html per coerenza */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:"Poppins",sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
+  color:#fff;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+  padding:100px 20px 40px;
+}
+nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
+.dropbtn {
+  background-color: #6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+.dropdown { position: relative; display:inline-block; }
+.dropdown-content { display:none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden; }
+.dropdown-content a { color:#6b8e77; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
+.dropdown-content a:hover { background-color:#e3ede6; }
+.dropdown:hover .dropdown-content { display:block; }
+.dropdown:hover .dropbtn { background-color: #58725f; }
 
-    .content {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 800px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-      color: #fff;
-      animation: fadeIn 1.5s ease;
-    }
-    @keyframes fadeIn { from { opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+.content {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  max-width:800px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  animation: fadeIn 1.5s ease;
+}
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-    h1 {
-      font-size: 2.5em;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-    }
-  </style>
+h1 { font-size:2.5em; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom:25px; }
+p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
+
+a.button { display:inline-block; padding:12px 25px; background:#6b8e77; color:white; border-radius:30px; text-decoration:none; font-weight:500; transition: all 0.3s ease; box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+a.button:hover { background:#58725f; transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.4);}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="dropdown">
-      <button class="dropbtn">Menu ☰</button>
-      <div class="dropdown-content">
-        <a href="index.html">Home</a>
-        <a href="chi-siamo.html">Chi Siamo</a>
-        <a href="servizi.html">Servizi</a>
-        <a href="contatti.html">Contatti</a>
-      </div>
+<nav>
+  <div class="dropdown">
+    <button class="dropbtn">Menu ☰</button>
+    <div class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="contatti.html">Contatti</a>
     </div>
-  </nav>
-
-  <div class="content">
-    <h1>Chi Siamo</h1>
-    <p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile. Organizzo con cura ogni dettaglio del tuo grande giorno: dagli allestimenti floreali ai libretti messa, dai coni porta riso alle bomboniere — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
-    <p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
-    <p>Con MLC – Matrimoni Low Cost, il sogno del tuo matrimonio perfetto diventa realtà, con stile, armonia e serenità.</p>
   </div>
+</nav>
+
+<div class="content">
+<h1>Chi Siamo</h1>
+<p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
+<p>Organizzo con cura ogni dettaglio del tuo grande giorno: dal tableau de mariage alle bomboniere, dagli allestimenti floreali ai libretti messa e ai coni porta riso — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
+<p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
+<p>In più, ho già selezionato per te un pacchetto di fornitori low cost affidabili: trucco, acconciatura, fotografo, violiniste per la Messa e DJ pronti a rendere unico il tuo matrimonio.</p>
+<p>E per rendere tutto ancora più speciale, posso realizzare anche: inviti personalizzati digitali o cartacei, reminder telematici eleganti, sito web del matrimonio.</p>
+<a href="contatti.html" class="button">Contattaci</a>
+</div>
 </body>
 </html>
