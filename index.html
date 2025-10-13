@@ -34,7 +34,14 @@
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* ombra menu */
+    transition: all 0.3s ease;
   }
+  .dropbtn:hover {
+    background-color: #557755; /* hover verde più scuro */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  }
+
   .dropdown { position: relative; display: inline-block; }
   .dropdown-content {
     display: none;
@@ -42,7 +49,7 @@
     right: 0;
     background-color: #fff;
     min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* ombra menu a tendina */
     border-radius: 10px;
     overflow: hidden;
   }
@@ -55,7 +62,6 @@
   }
   .dropdown-content a:hover { background-color: #e0e7df; }
   .dropdown:hover .dropdown-content { display: block; }
-  .dropdown:hover .dropbtn { background-color: #557755; } /* hover verde più scuro */
 
   .home-card {
     background: rgba(255,255,255,0.25);
@@ -63,7 +69,7 @@
     border-radius: 20px;
     padding: 40px;
     max-width:600px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* ombra più elegante per card */
     animation: fadeIn 1.5s ease;
     color:#222;
   }
@@ -90,11 +96,12 @@
     text-decoration:none;
     font-weight:500;
     transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* ombra pulsante */
   }
   a.button:hover {
     background:#557755; /* hover verde più scuro */
     transform:translateY(-3px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* ombra più intensa hover */
   }
 
   @media (max-width:600px) {
