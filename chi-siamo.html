@@ -6,26 +6,22 @@
 <title>Chi Siamo – MLC</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"Poppins",sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#222; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/foto-esempio.jpg') no-repeat center center/cover; }
-  nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
-  .dropbtn { background-color:#6B8E6B; color:#fff; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15); transition:all 0.3s ease; }
-  .dropbtn:hover { background-color:#557755; box-shadow:0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15); }
-  .dropdown { position: relative; display: inline-block; }
-  .dropdown-content { display: none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 20px rgba(0,0,0,0.25); border-radius:10px; overflow:hidden; }
-  .dropdown-content a { color:#6B8E6B; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
-  .dropdown-content a:hover { background-color:#e0e7df; }
-  .dropdown:hover .dropdown-content { display:block; }
-
-  .card { background: rgba(255,255,255,0.25); backdrop-filter:blur(10px); border-radius:20px; padding:40px; max-width:700px; box-shadow:0 12px 30px rgba(0,0,0,0.2); animation:fadeIn 1.5s ease; color:#222; }
-  @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-
-  h1 { font-weight:700; font-size:2.5em; color:#6B8E6B; text-shadow:1px 1px 1px #000; margin-bottom:15px; }
-  p { font-size:1.1em; font-weight:300; color:#222; margin-bottom:20px; }
-  a.button { display:inline-block; padding:12px 25px; background:#6B8E6B; color:#fff; border-radius:30px; text-decoration:none; font-weight:500; box-shadow:0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15); transition:all 0.3s ease; }
-  a.button:hover { background:#557755; transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15); }
-
-  @media(max-width:600px){h1{font-size:2em;} .card{padding:30px;}}
+body {
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(135deg,#e8f0e8,#ffffff);
+  color:#333;
+  text-align:center;
+  padding:80px 20px;
+}
+h1 { color:#6b8e6b; text-shadow:1px 1px 2px #0002; }
+section { max-width:700px; margin:40px auto; background:rgba(255,255,255,0.7); border-radius:20px; padding:30px; box-shadow:0 8px 32px rgba(0,0,0,0.1); }
+nav { position: fixed; top: 20px; right: 20px; }
+.dropbtn { background-color:#6b8e6b; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; }
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content { display:none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; }
+.dropdown-content a { color:#6b8e6b; padding:12px 16px; text-decoration:none; display:block; }
+.dropdown-content a:hover { background-color:#e8f0e8; }
+.dropdown:hover .dropdown-content { display:block; }
 </style>
 </head>
 <body>
@@ -41,11 +37,13 @@
   </div>
 </nav>
 
-<div class="card">
-  <h1>Chi Siamo</h1>
-  <p>Siamo <strong>MLC – Matrimoni Low Cost</strong>. La nostra missione è rendere il giorno più bello accessibile a tutti, senza rinunciare allo stile e alla magia del matrimonio.</p>
-  <p>Da anni accompagniamo coppie con soluzioni eleganti e personalizzate, curando ogni dettaglio senza far lievitare i costi.</p>
-  <a href="contatti.html" class="button">Contattaci</a>
-</div>
+<h1>Chi Sono 💖</h1>
+
+<section>
+  <p>Mi occupo di organizzare con cura ogni dettaglio del tuo grande giorno: dal tableau de mariage alle bomboniere, dagli allestimenti floreali ai libretti messa e ai coni porta riso — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
+  <p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
+  <p>Ho selezionato per te un pacchetto di fornitori low cost affidabili: trucco, acconciatura, fotografo, violiniste per la Messa e DJ pronti a rendere unico il tuo matrimonio.</p>
+  <a href="contatti.html" class="button" style="background:#6b8e6b; color:white; padding:12px 25px; border-radius:30px; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.2);">Contattami</a>
+</section>
 </body>
 </html>
