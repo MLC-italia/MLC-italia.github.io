@@ -73,12 +73,19 @@
     p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
 
     .service-box {
-      background: rgba(255,255,255,0.2);
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+      background: linear-gradient(145deg, rgba(107,142,119,0.6), rgba(157,189,163,0.3));
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      text-shadow:1px 1px 2px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
     }
 
     .chart-container {
@@ -86,6 +93,11 @@
       background: rgba(255,255,255,0.15);
       padding:20px;
       border-radius:15px;
+    }
+
+    @media (max-width:768px) {
+      h1 { font-size: 2em; }
+      .service-box { padding: 20px; }
     }
   </style>
 </head>
@@ -134,7 +146,6 @@
   <script>
     const ctx = document.getElementById('spesaGrafico').getContext('2d');
 
-    // Gradienti per effetto 3D
     const gradientItalia = ctx.createLinearGradient(0,0,0,400);
     gradientItalia.addColorStop(0,'rgba(107,142,119,1)');
     gradientItalia.addColorStop(1,'rgba(107,142,119,0.6)');
