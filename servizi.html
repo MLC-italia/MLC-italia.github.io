@@ -16,7 +16,7 @@
       justify-content: flex-start;
       text-align: center;
       color: #fff;
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
       padding: 100px 20px 40px;
     }
     nav {
@@ -35,17 +35,14 @@
       font-weight: 600;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
+    .dropdown { position: relative; display: inline-block; }
     .dropdown-content {
       display: none;
       position: absolute;
       right: 0;
       background-color: #fff;
       min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       border-radius: 10px;
       overflow: hidden;
     }
@@ -56,49 +53,39 @@
       display: block;
       font-weight: 500;
     }
-    .dropdown-content a:hover {
-      background-color: #e3ede6;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .dropdown:hover .dropbtn {
-      background-color: #58725f;
-    }
+    .dropdown-content a:hover { background-color: #e3ede6; }
+    .dropdown:hover .dropdown-content { display:block; }
+    .dropdown:hover .dropbtn { background-color: #58725f; }
+
     .content {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255,255,255,0.15);
       backdrop-filter: blur(10px);
       border-radius: 20px;
       padding: 40px;
       max-width: 1000px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
       animation: fadeIn 1.5s ease;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    h1 { font-size: 2.5em; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom: 30px; }
+    h2 { color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom:10px; }
+    p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
+
+    .service-box {
+      background: rgba(255,255,255,0.2);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-shadow:1px 1px 3px rgba(0,0,0,0.5);
     }
-    h1 {
-      font-size: 2.5em;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-      margin-bottom: 30px;
-    }
-    h2 {
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
+
     .chart-container {
       margin-top: 30px;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 20px;
-      border-radius: 15px;
+      background: rgba(255,255,255,0.15);
+      padding:20px;
+      border-radius:15px;
     }
   </style>
 </head>
@@ -133,10 +120,10 @@
       <p>Realizzazione inviti digitali, reminder telematici, sito web del matrimonio e molto altro per rendere il tuo evento davvero unico.</p>
     </div>
 
-    <!-- Titolo del grafico -->
+    <!-- Grafico a barre -->
     <div class="chart-container">
       <h2 style="color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom:20px;">
-        Media delle spese a persona per un matrimonio: Italia vs Friuli
+        Media delle spese a persona per un matrimonio: Italia vs Friuli vs MLC
       </h2>
       <canvas id="spesaGrafico"></canvas>
     </div>
@@ -146,69 +133,74 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     const ctx = document.getElementById('spesaGrafico').getContext('2d');
+
+    // Gradienti per effetto 3D
+    const gradientItalia = ctx.createLinearGradient(0,0,0,400);
+    gradientItalia.addColorStop(0,'rgba(107,142,119,1)');
+    gradientItalia.addColorStop(1,'rgba(107,142,119,0.6)');
+
+    const gradientFriuli = ctx.createLinearGradient(0,0,0,400);
+    gradientFriuli.addColorStop(0,'rgba(157,189,163,1)');
+    gradientFriuli.addColorStop(1,'rgba(157,189,163,0.6)');
+
+    const gradientMLC = ctx.createLinearGradient(0,0,0,400);
+    gradientMLC.addColorStop(0,'rgba(214,100,110,1)');
+    gradientMLC.addColorStop(1,'rgba(214,100,110,0.6)');
+
     const spesaGrafico = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Italia', 'Friuli'],
-        datasets: [{
-          label: '€ per persona',
-          data: [203, 175],
-          backgroundColor: [
-            'rgba(107,142,119,0.8)',
-            'rgba(157,189,163,0.8)'
-          ],
-          borderColor: [
-            'rgba(87,114,95,1)',
-            'rgba(117,142,116,1)'
-          ],
-          borderWidth: 2,
-          borderRadius: 10,
-          hoverBackgroundColor: [
-            'rgba(107,142,119,1)',
-            'rgba(157,189,163,1)'
-          ],
-          hoverBorderColor: [
-            'rgba(87,114,95,1)',
-            'rgba(117,142,116,1)'
-          ],
-          barPercentage: 0.6,
-          categoryPercentage: 0.6
+      type:'bar',
+      data:{
+        labels:['Italia','Friuli','MLC'],
+        datasets:[{
+          label:'€ per persona',
+          data:[203,175,135],
+          backgroundColor:[gradientItalia,gradientFriuli,gradientMLC],
+          borderColor:['rgba(87,114,95,1)','rgba(117,142,116,1)','rgba(180,60,70,1)'],
+          borderWidth:2,
+          borderRadius:10,
+          hoverBorderWidth:3,
+          hoverBorderColor:['rgba(87,114,95,1)','rgba(117,142,116,1)','rgba(180,60,70,1)'],
+          barPercentage:0.6,
+          categoryPercentage:0.6
         }]
       },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          tooltip: { enabled: true, callbacks: {
-            label: function(context) {
-              return context.dataset.label + ': €' + context.raw;
+      options:{
+        responsive:true,
+        plugins:{
+          legend:{ display:false },
+          tooltip:{
+            enabled:true,
+            callbacks:{
+              label:function(context){
+                return context.dataset.label+': €'+context.raw;
+              }
             }
-          }}
+          }
         },
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: 'Euro (€)',
-              color: '#fff',
-              font: { size: 16, weight: '600' }
+        scales:{
+          y:{
+            beginAtZero:true,
+            title:{
+              display:true,
+              text:'Euro (€)',
+              color:'#fff',
+              font:{ size:16, weight:'600' }
             },
-            ticks: {
-              color: '#fff',
-              font: { size: 14, weight: '500' }
+            ticks:{
+              color:'#fff',
+              font:{ size:14, weight:'500' }
             },
-            grid: {
-              color: 'rgba(255,255,255,0.2)',
-              borderDash: [5,5]
+            grid:{
+              color:'rgba(255,255,255,0.2)',
+              borderDash:[5,5]
             }
           },
-          x: {
-            ticks: {
-              color: '#fff',
-              font: { size: 14, weight: '600' }
+          x:{
+            ticks:{
+              color:'#fff',
+              font:{ size:14, weight:'600' }
             },
-            grid: { display: false }
+            grid:{ display:false }
           }
         }
       }
