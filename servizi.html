@@ -7,29 +7,130 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"Poppins",sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#222; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/foto-esempio.jpg') no-repeat center center/cover; }
-  nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
-  .dropbtn { background-color:#6B8E6B; color:#fff; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15); transition:all 0.3s ease; }
-  .dropbtn:hover { background-color:#557755; box-shadow:0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15); }
+
+  body {
+    font-family:"Poppins",sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#222;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+  }
+
+  nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+  .dropbtn {
+    background-color: #6B8E6B;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+  }
+
+  .dropbtn:hover {
+    background-color: #557755;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15);
+  }
+
   .dropdown { position: relative; display: inline-block; }
-  .dropdown-content { display: none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 20px rgba(0,0,0,0.25); border-radius:10px; overflow:hidden; }
-  .dropdown-content a { color:#6B8E6B; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
-  .dropdown-content a:hover { background-color:#e0e7df; }
-  .dropdown:hover .dropdown-content { display:block; }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .dropdown-content a {
+    color: #6B8E6B;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+  }
+  .dropdown-content a:hover { background-color: #e0e7df; }
+  .dropdown:hover .dropdown-content { display: block; }
 
-  .card { background: rgba(255,255,255,0.25); backdrop-filter:blur(10px); border-radius:20px; padding:40px; max-width:700px; box-shadow:0 12px 30px rgba(0,0,0,0.2); animation:fadeIn 1.5s ease; color:#222; text-align:left; }
-  @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 700px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 1.5s ease;
+    color: #222;
+    text-align: left;
+  }
 
-  h1 { font-weight:700; font-size:2.5em; color:#6B8E6B; text-shadow:1px 1px 1px #000; margin-bottom:15px; text-align:center; }
-  h2 { font-weight:600; font-size:1.5em; color:#557755; margin-top:20px; margin-bottom:10px; }
-  p { font-size:1.1em; font-weight:300; color:#222; margin-bottom:15px; }
-  a.button { display:inline-block; padding:12px 25px; background:#6B8E6B; color:#fff; border-radius:30px; text-decoration:none; font-weight:500; box-shadow:0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15); transition:all 0.3s ease; }
-  a.button:hover { background:#557755; transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-  @media(max-width:600px){h1{font-size:2em;} .card{padding:30px;}}
+  h1 {
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #6B8E6B;
+    text-shadow: 1px 1px 1px #000;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: #557755;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px #000; /* contorno nero sottile */
+  }
+
+  p {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #222;
+    margin-bottom: 15px;
+  }
+
+  a.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #6B8E6B;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+  }
+
+  a.button:hover {
+    background: #557755;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  @media(max-width:600px) {
+    h1 { font-size:2em; }
+    .card { padding: 30px; }
+  }
+
 </style>
 </head>
 <body>
+
 <nav>
   <div class="dropdown">
     <button class="dropbtn">Menu ☰</button>
@@ -54,5 +155,6 @@
   <p>Un team dedicato per seguire ogni dettaglio del matrimonio, senza stress.</p>
   <a href="contatti.html" class="button">Richiedi informazioni</a>
 </div>
+
 </body>
 </html>
