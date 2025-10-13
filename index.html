@@ -17,7 +17,6 @@
     justify-content:center;
     text-align:center;
     color:#222;
-    /* Sfondo immagine + overlay */
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/foto-esempio.jpg') no-repeat center center/cover;
   }
 
@@ -28,8 +27,8 @@
     z-index: 9999;
   }
   .dropbtn {
-    background-color: #6B8E6B; /* verde salvia base */
-    color: #222;
+    background-color: #6B8E6B; /* verde salvia scuro */
+    color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
@@ -48,7 +47,7 @@
     overflow: hidden;
   }
   .dropdown-content a {
-    color: #6B8E6B; /* verde salvia */
+    color: #6B8E6B; /* verde salvia scuro */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -56,7 +55,7 @@
   }
   .dropdown-content a:hover { background-color: #e0e7df; }
   .dropdown:hover .dropdown-content { display: block; }
-  .dropdown:hover .dropbtn { background-color: #8DA88D; } /* hover verde più scuro */
+  .dropdown:hover .dropbtn { background-color: #557755; } /* hover verde più scuro */
 
   .home-card {
     background: rgba(255,255,255,0.25);
@@ -73,21 +72,27 @@
 
   .home-card img { max-width:150px; margin-bottom:20px; }
 
-  h1 { font-weight:700; font-size:3em; color:#6B8E6B; margin-bottom:15px; } /* titolo verde salvia */
+  h1 {
+    font-weight:700;
+    font-size:3em;
+    color:#6B8E6B;       /* verde salvia scuro */
+    text-shadow: 1px 1px 1px #000; /* contorno sottile nero */
+    margin-bottom:15px;
+  }
   p { font-size:1.2em; font-weight:300; color:#222; margin-bottom:25px; }
 
   a.button {
     display:inline-block;
     padding:12px 25px;
     background:#6B8E6B; /* pulsante verde salvia */
-    color:#222;
+    color:#fff;
     border-radius:30px;
     text-decoration:none;
     font-weight:500;
     transition: all 0.3s ease;
   }
   a.button:hover {
-    background:#8DA88D; /* hover verde più scuro */
+    background:#557755; /* hover verde più scuro */
     transform:translateY(-3px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
