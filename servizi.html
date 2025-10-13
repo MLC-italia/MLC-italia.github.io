@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servizi – MLC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* stesso CSS di index.html per coerenza */
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:"Poppins",sans-serif;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ffb6c1,#ffd6d6,#fff);background-size:400% 400%;animation:gradient 12s ease infinite;color:#333;}
-    @keyframes gradient{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-    .card{background:rgba(255,255,255,0.3);backdrop-filter:blur(12px);border-radius:20px;padding:50px;max-width:500px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.15);animation:fadeIn 1.5s ease;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-    h1{font-weight:700;font-size:2.5em;color:#d63384;margin-bottom:15px;}
-    p{font-size:1.1em;font-weight:300;color:#444;margin-bottom:30px;}
-    a.button{display:inline-block;padding:12px 25px;background:#d63384;color:white;border-radius:30px;text-decoration:none;font-weight:500;transition:all 0.3s ease;}
-    a.button:hover{background:#b82d6e;transform:translateY(-3px);box-shadow:0 4px 15px rgba(214,51,132,0.3);}
-    nav{position:fixed;top:20px;right:20px;z-index:9999;}
-    .dropbtn{background-color:#d63384;color:white;padding:10px 15px;font-size:16px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
-    .dropdown{position:relative;display:inline-block;}
-    .dropdown-content{display:none;position:absolute;right:0;background-color:#fff;min-width:160px;box-shadow:0 8px 16px rgba(0,0,0,0.2);border-radius:10px;overflow:hidden;}
-    .dropdown-content a{color:#d63384;padding:12px 16px;text-decoration:none;display:block;font-weight:500;}
-    .dropdown-content a:hover{background-color:#f8d7e2;}
-    .dropdown:hover .dropdown-content{display:block;}
-    .dropdown:hover .dropbtn{background-color:#b82d6e;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servizi – MLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Poppins",sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#222; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('img/foto-esempio.jpg') no-repeat center center/cover; }
+  nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
+  .dropbtn { background-color:#6B8E6B; color:#fff; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15); transition:all 0.3s ease; }
+  .dropbtn:hover { background-color:#557755; box-shadow:0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15); }
+  .dropdown { position: relative; display: inline-block; }
+  .dropdown-content { display: none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 20px rgba(0,0,0,0.25); border-radius:10px; overflow:hidden; }
+  .dropdown-content a { color:#6B8E6B; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
+  .dropdown-content a:hover { background-color:#e0e7df; }
+  .dropdown:hover .dropdown-content { display:block; }
+
+  .card { background: rgba(255,255,255,0.25); backdrop-filter:blur(10px); border-radius:20px; padding:40px; max-width:700px; box-shadow:0 12px 30px rgba(0,0,0,0.2); animation:fadeIn 1.5s ease; color:#222; text-align:left; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+  h1 { font-weight:700; font-size:2.5em; color:#6B8E6B; text-shadow:1px 1px 1px #000; margin-bottom:15px; text-align:center; }
+  h2 { font-weight:600; font-size:1.5em; color:#557755; margin-top:20px; margin-bottom:10px; }
+  p { font-size:1.1em; font-weight:300; color:#222; margin-bottom:15px; }
+  a.button { display:inline-block; padding:12px 25px; background:#6B8E6B; color:#fff; border-radius:30px; text-decoration:none; font-weight:500; box-shadow:0 6px 15px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.15); transition:all 0.3s ease; }
+  a.button:hover { background:#557755; transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.25), inset 0 2px 4px rgba(0,0,0,0.15); }
+
+  @media(max-width:600px){h1{font-size:2em;} .card{padding:30px;}}
+</style>
 </head>
 <body>
-  <nav>
-    <div class="dropdown">
-      <button class="dropbtn">Menu ☰</button>
-      <div class="dropdown-content">
-        <a href="index.html">Home</a>
-        <a href="chi-siamo.html">Chi Siamo</a>
-        <a href="servizi.html">Servizi</a>
-        <a href="contatti.html">Contatti</a>
-      </div>
+<nav>
+  <div class="dropdown">
+    <button class="dropbtn">Menu ☰</button>
+    <div class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="chi-siamo.html">Chi Siamo</a>
+      <a href="servizi.html">Servizi</a>
+      <a href="contatti.html">Contatti</a>
     </div>
-  </nav>
-
-  <div class="card">
-    <h1>Servizi ✨</h1>
-    <p>Offriamo pacchetti personalizzati per matrimoni low cost: location, catering, decorazioni e tutto ciò che serve per un matrimonio da sogno senza spendere una fortuna.</p>
-    <a href="mailto:info@mlc.it" class="button">Richiedi Info</a>
   </div>
+</nav>
+
+<div class="card">
+  <h1>I nostri Servizi</h1>
+  <h2>Location e allestimenti</h2>
+  <p>Proponiamo location eleganti con allestimenti personalizzati a prezzi accessibili.</p>
+  <h2>Catering e menù</h2>
+  <p>Soluzioni culinarie per ogni gusto, dai menù classici a quelli più creativi.</p>
+  <h2>Fotografia e video</h2>
+  <p>Servizi professionali per immortalare ogni momento del vostro giorno speciale.</p>
+  <h2>Consulenza e coordinamento</h2>
+  <p>Un team dedicato per seguire ogni dettaglio del matrimonio, senza stress.</p>
+  <a href="contatti.html" class="button">Richiedi informazioni</a>
+</div>
 </body>
 </html>
