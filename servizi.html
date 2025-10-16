@@ -279,15 +279,24 @@
   </div>
 
   <script>
-    function generaPDF() {
+    async function generaPDF() {
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF();
+      
+      // Carica e inserisce il logo
+      const img = new Image();
+      img.src = 'img/logo.png';
+      await new Promise(resolve => { img.onload = resolve; });
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const logoWidth = 40;
+      const logoX = (pageWidth - logoWidth) / 2;
+      doc.addImage(img, 'PNG', logoX, 10, logoWidth, 20);
 
       doc.setFont("helvetica", "bold");
-      doc.setFontSize(18);
-      doc.text("Confronto Pacchetti MLC", 20, 25);
+      doc.setFontSize(16);
+      doc.text("Confronto Pacchetti MLC", pageWidth / 2, 40, { align: "center" });
 
-      const startY = 40;
+      const startY = 50;
       const col1 = 20, col2 = 150, col3 = 180;
 
       doc.setFontSize(12);
@@ -302,8 +311,8 @@
       rows.forEach(row => {
         const cells = row.querySelectorAll("td");
         const servizio = cells[0].innerText;
-        const base = cells[1].innerText || "";
-        const allinc = cells[2].innerText || "";
+        let base = cells[1].innerText === "✓" ? "SI" : "NO";
+        let allinc = cells[2].innerText === "✓" ? "SI" : "NO";
         doc.text(servizio, col1, y);
         doc.text(base, col2 + 10, y);
         doc.text(allinc, col3 + 10, y);
@@ -334,7 +343,7 @@
         "Bomboniere enogastronomiche del territorio FVG"
       ];
       extra.forEach(item => {
-        doc.text("✓ " + item, col1, y);
+        doc.text("- " + item, col1, y);
         y += 6;
       });
 
