@@ -140,6 +140,43 @@
     .price-box h3 { margin-bottom: 5px; }
     .price-box p { color: #e6c89c; font-weight: 600; }
 
+    /* EXTRA */
+    .extra {
+      margin-top: 50px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+      text-align: left;
+    }
+
+    .extra h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 1.6em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .extra p {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 0.95em;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .extra ul {
+      list-style: none;
+      padding-left: 10px;
+      line-height: 1.6;
+    }
+
+    .extra ul li::before {
+      content: "✓";
+      color: #e6c89c;
+      margin-right: 8px;
+    }
+
     .download-btn {
       display: inline-block;
       margin: 40px auto 10px;
@@ -224,6 +261,20 @@
       </div>
     </div>
 
+    <div class="extra">
+      <h2>Servizi Extra su Richiesta</h2>
+      <p>A prezzo variabile, da concordare in base alle esigenze e ai dettagli dell’evento.</p>
+      <ul>
+        <li>Auto a noleggio con autista</li>
+        <li>Dog sitter dedicato durante la giornata</li>
+        <li>Ricerca abito sposa (anche con budget di 500 €)</li>
+        <li>Evento pirotecnico per il taglio torta</li>
+        <li>Angolo selfie con cornice e gadget</li>
+        <li>Angolo foto Polaroid per ospiti</li>
+        <li>Bomboniere enogastronomiche del territorio FVG</li>
+      </ul>
+    </div>
+
     <button class="download-btn" onclick="generaPDF()">Scarica ↓</button>
   </div>
 
@@ -267,6 +318,25 @@
       doc.text("Pacchetto Base – a partire da 130 € per 100 persone", col1, y);
       y += 6;
       doc.text("Pacchetto All Inclusive – a partire da 150 € per 100 persone", col1, y);
+
+      y += 12;
+      doc.setFont("helvetica", "bold");
+      doc.text("Servizi Extra su Richiesta:", col1, y);
+      doc.setFont("helvetica", "normal");
+      y += 8;
+      const extra = [
+        "Auto a noleggio con autista",
+        "Dog sitter dedicato durante la giornata",
+        "Ricerca abito sposa (anche con budget di 500 €)",
+        "Evento pirotecnico per il taglio torta",
+        "Angolo selfie con cornice e gadget",
+        "Angolo foto Polaroid per ospiti",
+        "Bomboniere enogastronomiche del territorio FVG"
+      ];
+      extra.forEach(item => {
+        doc.text("✓ " + item, col1, y);
+        y += 6;
+      });
 
       doc.save("Tabella_Pacchetti_MLC.pdf");
     }
