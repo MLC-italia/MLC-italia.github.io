@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servizi – MLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
+
+    .dropbtn {
+      background-color: #6b8e77;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: #6b8e77;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+    .dropdown-content a:hover { background-color: #e3ede6; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown:hover .dropbtn { background-color: #58725f; }
+
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+    h1 {
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+
+    .package-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .package {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: left;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .package:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+
+    .package h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+
+    .package p.price {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3em;
+      color: #e6c89c;
+      margin-bottom: 15px;
+    }
+
+    /* TABELLA */
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
+    table th, table td {
+      padding: 10px 8px;
+    }
+
+    table th {
+      border-bottom: 2px solid #e6c89c;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    table td:first-child {
+      text-align: left;
+      width: 60%;
+    }
+
+    table td {
+      text-align: center;
+    }
+
+    .tick { color: #e6c89c; font-weight: 700; }
+    .cross { color: #ff6b6b; font-weight: 700; }
+
+    .extra {
+      grid-column: span 2;
+      background: rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2em; }
+      .content { padding: 30px; }
+      .extra { grid-column: span 1; }
+      table { font-size: 0.8em; }
+      table th, table td { padding: 8px 5px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu -->
+  <nav>
+    <div class="dropdown">
+      <button class="dropbtn">Menu ☰</button>
+      <div class="dropdown-content">
+        <a href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="contatti.html">Contatti</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1>Pacchetti Matrimonio</h1>
+
+    <div class="package-container">
+      <!-- Tabella comparativa unica -->
+      <div class="package">
+        <h2>Confronto Pacchetti</h2>
+        <p class="price">Servizi inclusi nei pacchetti Base / All Inclusive</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Servizio</th>
+                <th>Base</th>
+                <th>All Inclusive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Inviti cartacei e telematici con reminder IBAN</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Fiori per la chiesa e bouquet</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Musica in chiesa (2 brani)</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+              <tr><td>Musica in chiesa (5 brani)</td><td class="cross">✗</td><td class="tick">✓</td></tr>
+              <tr><td>Libretti messa</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Coni porta riso</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Ristorante, addobbi e fiori</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Musica al ristorante</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Baby sitting (3 ore)</td><td class="tick">✓</td><td class="cross">✗</td></tr>
+              <tr><td>Baby sitting (5 ore)</td><td class="cross">✗</td><td class="tick">✓</td></tr>
+              <tr><td>SIAE</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Fotografo con consegna digitale (chiavetta)</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Bomboniere</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Servizio di wedding planner</td><td class="tick">✓</td><td class="tick">✓</td></tr>
+              <tr><td>Sito matrimonio per foto</td><td class="cross">✗</td><td class="tick">✓</td></tr>
+              <tr><td>Open bar</td><td class="cross">✗</td><td class="tick">✓</td></tr>
+              <tr><td>Video con drone</td><td class="cross">✗</td><td class="tick">✓</td></tr>
+              <tr><td>Trucco e acconciatura sposa</td><td class="cross">✗</td><td class="tick">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Extra Servizi -->
+      <div class="package extra">
+        <h2>Extra Servizi (opzionali)</h2>
+        <ul>
+          <li>Auto a noleggio</li>
+          <li>Dog sitter</li>
+          <li>Ricerca abito sposa (anche con budget di 500 €)</li>
+          <li>Evento pirotecnico taglio torta</li>
+          <li>Angolo selfie con cornice e gadget</li>
+          <li>Angolo foto Polaroid per ospiti</li>
+          <li>Bomboniere enogastronomiche del territorio FVG</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
