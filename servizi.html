@@ -7,24 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: center;
-      color: #fff;
       background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-      padding: 100px 20px 40px;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 60px;
     }
+
     nav {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 9999;
     }
+
     .dropbtn {
       background-color: #6b8e77;
       color: white;
@@ -33,8 +32,9 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+
     .dropdown { position: relative; display: inline-block; }
     .dropdown-content {
       display: none;
@@ -54,113 +54,95 @@
       font-weight: 500;
     }
     .dropdown-content a:hover { background-color: #e3ede6; }
-    .dropdown:hover .dropdown-content { display:block; }
+    .dropdown:hover .dropdown-content { display: block; }
     .dropdown:hover .dropbtn { background-color: #58725f; }
 
     .content {
+      max-width: 1000px;
+      margin: 0 auto;
       background: rgba(255,255,255,0.15);
       backdrop-filter: blur(10px);
       border-radius: 20px;
-      padding: 40px;
-      max-width: 1000px;
+      padding: 50px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.25);
       animation: fadeIn 1.5s ease;
     }
+
     @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-    h1 { font-size: 2.5em; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom: 30px; }
-    h2 { color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom:10px; }
-    p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
+    h1 {
+      font-size: 2.8em;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
 
-    <div class="service-table">
-  <h2>Pacchetti e Servizi</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Pacchetto/Servizio</th>
-        <th>Descrizione</th>
-        <th>Prezzo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Pacchetto Base</td>
-        <td>Descrizione del pacchetto base.</td>
-        <td>€XXX</td>
-      </tr>
-      <tr>
-        <td>Pacchetto Avanzato</td>
-        <td>Descrizione del pacchetto avanzato.</td>
-        <td>€XXX</td>
-      </tr>
-      <tr>
-        <td>Servizi Extra</td>
-        <td>Descrizione dei servizi extra.</td>
-        <td>€XXX</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<style>
-.service-table {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 800px;
-  margin: 20px auto;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  color: #333;
-}
-
-.service-table h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color: #6b8e77;
-}
-
-.service-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.service-table th, .service-table td {
-  padding: 12px;
-  border: 1px solid rgba(0,0,0,0.1);
-}
-
-.service-table th {
-  background-color: #6b8e77;
-  color: #fff;
-}
-
-.service-table tr:nth-child(even) {
-  background-color: rgba(0,0,0,0.05);
-}
-</style>
-
-    .chart-container {
+    .package-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-content: center;
       margin-top: 30px;
-      background: rgba(255,255,255,0.15);
-      padding:20px;
-      border-radius:15px;
     }
 
-    .chart-fonte {
-      color:#fff;
-      font-size:0.9em;
-      text-shadow:1px 1px 2px rgba(0,0,0,0.5);
-      margin-top:10px;
+    .package {
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: left;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    @media (max-width:768px) {
-      h1 { font-size: 2em; }
-      .service-box { padding: 20px; }
+    .package:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+
+    .package h2 {
+      color: #fff;
+      text-align: center;
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    }
+
+    .package p.price {
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3em;
+      color: #e6c89c;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 10px;
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: "✓";
+      color: #e6c89c;
+      margin-right: 8px;
+    }
+
+    .extra {
+      grid-column: span 2;
+      background: rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2em; }
+      .content { padding: 30px; }
+      .extra { grid-column: span 1; }
     }
   </style>
 </head>
 <body>
+  <!-- Menu -->
   <nav>
     <div class="dropdown">
       <button class="dropbtn">Menu ☰</button>
@@ -174,110 +156,56 @@
   </nav>
 
   <div class="content">
-    <h1>Servizi</h1>
+    <h1>Pacchetti Matrimonio</h1>
 
-    <div class="service-box">
-      <h2>Pacchetto Base</h2>
-      <p>Comprende la consulenza iniziale, ricerca location, e coordinamento fornitori principali (make-up, acconciatura, fotografo, musicisti).</p>
-    </div>
+    <div class="package-container">
+      <div class="package">
+        <h2>Pacchetto Base</h2>
+        <p class="price">130,00 €</p>
+        <p>Ideale per chi desidera una celebrazione elegante e curata, senza rinunciare all’essenziale. Include:</p>
+        <ul>
+          <li>Inviti cartacei e telematici con reminder IBAN</li>
+          <li>Fiori per la chiesa e bouquet</li>
+          <li>Musica in chiesa (2 brani)</li>
+          <li>Libretti messa</li>
+          <li>Coni porta riso</li>
+          <li>Ristorante, addobbi e fiori</li>
+          <li>Musica al ristorante</li>
+          <li>Baby sitting (3 ore)</li>
+          <li>SIAE</li>
+          <li>Fotografo con consegna digitale (chiavetta)</li>
+          <li>Bomboniere</li>
+          <li>Servizio di wedding planner</li>
+        </ul>
+      </div>
 
-    <div class="service-box">
-      <h2>Pacchetto Completo</h2>
-      <p>Organizzazione completa del matrimonio: dal progetto creativo agli inviti personalizzati, fino al coordinamento del giorno dell’evento.</p>
-    </div>
+      <div class="package">
+        <h2>Pacchetto All Inclusive</h2>
+        <p class="price">150,00 €</p>
+        <p>Per chi sogna un matrimonio senza pensieri, completo e raffinato. Include tutto del pacchetto Base, più:</p>
+        <ul>
+          <li>Sito matrimonio per foto</li>
+          <li>Musica in chiesa (5 brani)</li>
+          <li>Open bar</li>
+          <li>Baby sitting (5 ore)</li>
+          <li>Video con drone</li>
+          <li>Trucco e acconciatura sposa</li>
+        </ul>
+      </div>
 
-    <div class="service-box">
-      <h2>Servizi Extra</h2>
-      <p>Realizzazione inviti digitali, reminder telematici, sito web del matrimonio e molto altro per rendere il tuo evento davvero unico.</p>
-    </div>
-
-    <!-- Grafico a barre -->
-    <div class="chart-container">
-      <h2 style="color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom:20px;">
-        Media delle spese a persona per un matrimonio: Italia vs Friuli vs MLC
-      </h2>
-      <canvas id="spesaGrafico"></canvas>
-      <p class="chart-fonte">
-        Fonte dati: <a href="https://www.istat.it/it/archivio/244090" target="_blank" style="color:#ffd;">ISTAT, 2025</a>.
-      </p>
+      <div class="package extra">
+        <h2>Extra Servizi (opzionali)</h2>
+        <ul>
+          <li>Auto a noleggio</li>
+          <li>Dog sitter</li>
+          <li>Ricerca abito sposa (anche con budget di 500 €)</li>
+          <li>Evento pirotecnico taglio torta</li>
+          <li>Angolo selfie con cornice e gadget</li>
+          <li>Angolo foto Polaroid per ospiti</li>
+          <li>Bomboniere enogastronomiche del territorio FVG</li>
+        </ul>
+      </div>
     </div>
   </div>
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('spesaGrafico').getContext('2d');
-
-    const gradientItalia = ctx.createLinearGradient(0,0,0,400);
-    gradientItalia.addColorStop(0,'rgba(107,142,119,1)');
-    gradientItalia.addColorStop(1,'rgba(107,142,119,0.6)');
-
-    const gradientFriuli = ctx.createLinearGradient(0,0,0,400);
-    gradientFriuli.addColorStop(0,'rgba(157,189,163,1)');
-    gradientFriuli.addColorStop(1,'rgba(157,189,163,0.6)');
-
-    const gradientMLC = ctx.createLinearGradient(0,0,0,400);
-    gradientMLC.addColorStop(0,'rgba(214,100,110,1)');
-    gradientMLC.addColorStop(1,'rgba(214,100,110,0.6)');
-
-    const spesaGrafico = new Chart(ctx, {
-      type:'bar',
-      data:{
-        labels:['Italia','Friuli','MLC'],
-        datasets:[{
-          label:'€ per persona',
-          data:[203,175,135],
-          backgroundColor:[gradientItalia,gradientFriuli,gradientMLC],
-          borderColor:['rgba(87,114,95,1)','rgba(117,142,116,1)','rgba(180,60,70,1)'],
-          borderWidth:2,
-          borderRadius:10,
-          hoverBorderWidth:3,
-          hoverBorderColor:['rgba(87,114,95,1)','rgba(117,142,116,1)','rgba(180,60,70,1)'],
-          barPercentage:0.6,
-          categoryPercentage:0.6
-        }]
-      },
-      options:{
-        responsive:true,
-        plugins:{
-          legend:{ display:false },
-          tooltip:{
-            enabled:true,
-            callbacks:{
-              label:function(context){
-                return context.dataset.label+': €'+context.raw;
-              }
-            }
-          }
-        },
-        scales:{
-          y:{
-            beginAtZero:true,
-            title:{
-              display:true,
-              text:'Euro (€)',
-              color:'#fff',
-              font:{ size:16, weight:'600' }
-            },
-            ticks:{
-              color:'#fff',
-              font:{ size:14, weight:'500' }
-            },
-            grid:{
-              color:'rgba(255,255,255,0.2)',
-              borderDash:[5,5]
-            }
-          },
-          x:{
-            ticks:{
-              color:'#fff',
-              font:{ size:14, weight:'600' }
-            },
-            grid:{ display:false }
-          }
-        }
-      }
-    });
-  </script>
 </body>
 </html>
