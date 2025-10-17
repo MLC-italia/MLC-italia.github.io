@@ -22,57 +22,97 @@ body {
   background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
   padding:100px 20px 40px;
 }
+
+/* NAV MENU */
 nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
 .dropbtn {
-  background-color: #6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  background-color: #6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px;
+  cursor:pointer; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2);
 }
 .dropdown { position: relative; display:inline-block; }
-.dropdown-content { display:none; position:absolute; right:0; background-color:#fff; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden; }
-.dropdown-content a { color:#6b8e77; padding:12px 16px; text-decoration:none; display:block; font-weight:500; }
+.dropdown-content {
+  display:none; position:absolute; right:0; background-color:#fff; min-width:160px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.2); border-radius:10px; overflow:hidden;
+}
+.dropdown-content a {
+  color:#6b8e77; padding:12px 16px; text-decoration:none; display:block; font-weight:500;
+}
 .dropdown-content a:hover { background-color:#e3ede6; }
 .dropdown:hover .dropdown-content { display:block; }
 .dropdown:hover .dropbtn { background-color: #58725f; }
 
+/* CONTENT BOX */
 .content {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 40px;
+  padding: 40px 30px;
   max-width:800px;
+  width: 90%;
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   animation: fadeIn 1.5s ease;
+  text-align: left;
 }
 @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-h1 { font-size:2.5em; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.6); margin-bottom:25px; }
-p { font-size:1.1em; line-height:1.6; margin-bottom:15px; }
+h1 {
+  font-size:2.3em;
+  color:#fff;
+  text-align:center;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.6);
+  margin-bottom:25px;
+}
+p { font-size:1.05em; line-height:1.7; margin-bottom:18px; color:#f7f7f7; }
 
-a.button { display:inline-block; padding:12px 25px; background:#6b8e77; color:white; border-radius:30px; text-decoration:none; font-weight:500; transition: all 0.3s ease; box-shadow:0 4px 15px rgba(0,0,0,0.3);}
-a.button:hover { background:#58725f; transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.4);}
+a.button {
+  display:inline-block; padding:12px 25px; background:#6b8e77; color:white;
+  border-radius:30px; text-decoration:none; font-weight:500;
+  transition: all 0.3s ease; box-shadow:0 4px 15px rgba(0,0,0,0.3);
+  margin-top:15px; text-align:center;
+}
+a.button:hover {
+  background:#58725f; transform:translateY(-3px);
+  box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
 
 /* MISSION BOX */
 .mission-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  padding: 25px 20px;
-  margin: 30px 0;
+  background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  margin: 35px 0;
   max-width: 750px;
-  width: 90%;
-  text-align: left;
-  font-size: 1.05em;
+  width: 100%;
   color: #fff;
   box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-  line-height: 1.6;
+  line-height: 1.7;
 }
+.mission-box p {
+  color:#fff;
+  font-size:1.05em;
+  margin-bottom:18px;
+}
+.mission-box p:first-child::before {
+  content:"💍 ";
+}
+.mission-box p:last-child {
+  margin-bottom:0;
+}
+
 @media (max-width: 768px) {
-  .mission-box { font-size: 1em; padding: 20px; width: 95%; }
+  body { padding:80px 15px 30px; }
+  .content { padding: 30px 20px; }
+  .mission-box { font-size: 1em; padding: 22px; border-radius:15px; }
+  h1 { font-size:2em; }
 }
 @media (max-width: 480px) {
-  .mission-box { font-size: 0.95em; padding: 15px; width: 98%; line-height:1.5; }
+  .mission-box { font-size: 0.95em; padding: 18px; line-height:1.6; }
+  h1 { font-size:1.8em; }
 }
 </style>
 </head>
+
 <body>
 <nav>
   <div class="dropdown">
@@ -88,6 +128,7 @@ a.button:hover { background:#58725f; transform:translateY(-3px); box-shadow:0 6p
 
 <div class="content">
 <h1>Chi Siamo</h1>
+
 <p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
 <p>Organizzo con cura ogni dettaglio del tuo grande giorno: dal tableau de mariage alle bomboniere, dagli allestimenti floreali ai libretti messa e ai coni porta riso — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
 <p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
@@ -96,14 +137,16 @@ a.button:hover { background:#58725f; transform:translateY(-3px); box-shadow:0 6p
 
 <!-- MISSION BOX -->
 <div class="mission-box">
-<p>Sappiamo bene che organizzare un matrimonio può essere un'esperienza emozionante, ma anche stressante e piena di domande. Spesso ci si trova a dover perdere tempo per ottenere informazioni sui costi, contattando diversi fornitori e chiedendo preventivi. E anche quando finalmente si ottiene il prezzo, ci sono spesso costi nascosti o imprevisti che possono rovinare i piani.</p>
+  <p>Sappiamo bene che organizzare un matrimonio può essere un'esperienza emozionante, ma anche stressante e piena di domande. Spesso ci si trova a dover perdere tempo per ottenere informazioni sui costi, contattando diversi fornitori e chiedendo preventivi. E anche quando finalmente si ottiene il prezzo, ci sono spesso costi nascosti o imprevisti che possono rovinare i piani.</p>
 
-<p>Noi di MLC vogliamo cambiare questo approccio. Crediamo che organizzare un matrimonio debba essere un'esperienza gioiosa e senza stress. Ecco perché ti offriamo un prezzo finito e comprensivo di tutto, senza sorprese o costi nascosti. In questo modo, potrai concentrarti su ciò che conta davvero: celebrare il tuo amore e la tua unione con le persone che ami.</p>
+  <p>Noi di MLC vogliamo cambiare questo approccio. Crediamo che organizzare un matrimonio debba essere un'esperienza gioiosa e senza stress. Ecco perché ti offriamo un prezzo finito e comprensivo di tutto, senza sorprese o costi nascosti. In questo modo, potrai concentrarti su ciò che conta davvero: celebrare il tuo amore e la tua unione con le persone che ami.</p>
 
-<p>Il nostro obiettivo è di renderti le cose più semplici e trasparenti possibile. Vogliamo che tu sappia esattamente quanto costa il tuo matrimonio, senza dover chiedere o aspettare. E poi, ci occuperemo noi di tutto il resto, dalle decorazioni al catering, fino al giorno del matrimonio. Lascia a noi la parte difficile, e goditi il tuo matrimonio!</p>
+  <p>Il nostro obiettivo è renderti le cose più semplici e trasparenti possibile. Vogliamo che tu sappia esattamente quanto costa il tuo matrimonio, senza dover chiedere o aspettare. E poi, ci occuperemo noi di tutto il resto — dalle decorazioni al catering — fino al giorno del matrimonio. Lascia a noi la parte difficile, e goditi il tuo matrimonio!</p>
 </div>
 
-<a href="contatti.html" class="button">Contattaci</a>
+<div style="text-align:center;">
+  <a href="contatti.html" class="button">Contattaci</a>
+</div>
 </div>
 </body>
 </html>
