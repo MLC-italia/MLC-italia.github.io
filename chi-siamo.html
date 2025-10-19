@@ -8,22 +8,17 @@
 <meta name="keywords" content="chi siamo, wedding planner, matrimoni low cost, Friuli, MLC">
 <meta name="author" content="MLC – Stefania">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
   font-family:"Poppins",sans-serif;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  text-align:center;
-  color:#fff;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
-  padding:100px 20px 40px;
+  background: #6b8e77;
+  color: #fff;
+  line-height:1.6;
 }
 
-/* NAV MENU */
+/* --- NAV MENU --- */
 nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
 .dropbtn {
   background-color: #6b8e77; color:white; padding:10px 15px; border:none; border-radius:8px;
@@ -41,74 +36,87 @@ nav { position: fixed; top: 20px; right: 20px; z-index: 9999; }
 .dropdown:hover .dropdown-content { display:block; }
 .dropdown:hover .dropbtn { background-color: #58725f; }
 
-/* CONTENT BOX */
-.content {
-  background: rgba(255,255,255,0.15);
+/* --- HERO SECTION --- */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  animation: fadeIn 1.5s ease;
+}
+
+/* --- CONTENT --- */
+section {
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.1));
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 40px 30px;
-  max-width:800px;
+  margin: -60px auto 60px auto;
+  padding: 50px 30px;
+  max-width: 900px;
   width: 90%;
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-  animation: fadeIn 1.5s ease;
-  text-align: left;
+  animation: fadeInUp 1.2s ease;
 }
-@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-h1 {
-  font-size:2.3em;
-  color:#fff;
-  text-align:center;
-  text-shadow:1px 1px 3px rgba(0,0,0,0.6);
-  margin-bottom:25px;
+@keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+section h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-p { font-size:1.05em; line-height:1.7; margin-bottom:18px; color:#f7f7f7; }
+section p {
+  margin-bottom: 18px;
+  font-size: 1.05em;
+}
 
+/* --- MISSION BOX --- */
+.mission-box {
+  background: rgba(255,255,255,0.1);
+  padding: 30px 25px;
+  border-radius: 15px;
+  margin-top: 40px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+.mission-box p { margin-bottom: 18px; }
+.mission-box p:first-child::before { content:"💍 "; }
+
+/* --- CTA BUTTON --- */
 a.button {
-  display:inline-block; padding:12px 25px; background:#6b8e77; color:white;
-  border-radius:30px; text-decoration:none; font-weight:500;
-  transition: all 0.3s ease; box-shadow:0 4px 15px rgba(0,0,0,0.3);
-  margin-top:15px; text-align:center;
+  display:inline-block;
+  padding:12px 25px;
+  background:#6b8e77;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:500;
+  transition: all 0.3s ease;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+  margin-top:15px;
+  text-align:center;
 }
 a.button:hover {
-  background:#58725f; transform:translateY(-3px);
+  background:#58725f;
+  transform:translateY(-3px);
   box-shadow:0 6px 20px rgba(0,0,0,0.4);
 }
 
-/* MISSION BOX */
-.mission-box {
-  background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px 25px;
-  margin: 35px 0;
-  max-width: 750px;
-  width: 100%;
-  color: #fff;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-  line-height: 1.7;
-}
-.mission-box p {
-  color:#fff;
-  font-size:1.05em;
-  margin-bottom:18px;
-}
-.mission-box p:first-child::before {
-  content:"💍 ";
-}
-.mission-box p:last-child {
-  margin-bottom:0;
-}
-
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  body { padding:80px 15px 30px; }
-  .content { padding: 30px 20px; }
-  .mission-box { font-size: 1em; padding: 22px; border-radius:15px; }
-  h1 { font-size:2em; }
+  .hero h1 { font-size: 2.2em; }
+  section { padding: 35px 20px; margin-top: -40px; }
 }
 @media (max-width: 480px) {
-  .mission-box { font-size: 0.95em; padding: 18px; line-height:1.6; }
-  h1 { font-size:1.8em; }
+  .hero { height: 50vh; }
+  .hero h1 { font-size: 1.8em; }
+  section { padding: 25px 15px; margin-top: -30px; }
 }
 </style>
 </head>
@@ -126,27 +134,33 @@ a.button:hover {
   </div>
 </nav>
 
-<div class="content">
-<h1>Chi Siamo</h1>
-
-<p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
-<p>Organizzo con cura ogni dettaglio del tuo grande giorno: dal tableau de mariage alle bomboniere, dagli allestimenti floreali ai libretti messa e ai coni porta riso — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
-<p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
-<p>In più, ho già selezionato per te un pacchetto di fornitori low cost affidabili: trucco, acconciatura, fotografo, violiniste per la Messa e DJ pronti a rendere unico il tuo matrimonio.</p>
-<p>E per rendere tutto ancora più speciale, posso realizzare anche: inviti personalizzati digitali o cartacei, reminder telematici eleganti, sito web del matrimonio.</p>
-
-<!-- MISSION BOX -->
-<div class="mission-box">
-  <p>Sappiamo bene che organizzare un matrimonio può essere un'esperienza emozionante, ma anche stressante e piena di domande. Spesso ci si trova a dover perdere tempo per ottenere informazioni sui costi, contattando diversi fornitori e chiedendo preventivi. E anche quando finalmente si ottiene il prezzo, ci sono spesso costi nascosti o imprevisti che possono rovinare i piani.</p>
-
-  <p>Noi di MLC vogliamo cambiare questo approccio. Crediamo che organizzare un matrimonio debba essere un'esperienza gioiosa e senza stress. Ecco perché ti offriamo un prezzo finito e comprensivo di tutto, senza sorprese o costi nascosti. In questo modo, potrai concentrarti su ciò che conta davvero: celebrare il tuo amore e la tua unione con le persone che ami.</p>
-
-  <p>Il nostro obiettivo è renderti le cose più semplici e trasparenti possibile. Vogliamo che tu sappia esattamente quanto costa il tuo matrimonio, senza dover chiedere o aspettare. E poi, ci occuperemo noi di tutto il resto — dalle decorazioni al catering — fino al giorno del matrimonio. Lascia a noi la parte difficile, e goditi il tuo matrimonio!</p>
+<!-- HERO SECTION -->
+<div class="hero">
+  <h1>Chi Siamo</h1>
 </div>
 
-<div style="text-align:center;">
-  <a href="contatti.html" class="button">Contattaci</a>
-</div>
-</div>
+<!-- MAIN CONTENT -->
+<section>
+  <h2>La Nostra Storia</h2>
+  <p>Ciao! Sono Stefania, wedding planner specializzata in matrimoni low cost ma pieni di stile.</p>
+  <p>Organizzo con cura ogni dettaglio del tuo grande giorno: dal tableau de mariage alle bomboniere, dagli allestimenti floreali ai libretti messa e ai coni porta riso — tutto pensato per emozionare, non per svuotare il portafoglio.</p>
+  <p>Mi occupo anche della ricerca dei locali più belli e accessibili del Friuli, per offrirti la cornice perfetta senza costi esagerati.</p>
+
+  <h2>I Nostri Servizi</h2>
+  <p>Ho già selezionato per te un pacchetto di fornitori low cost affidabili: trucco, acconciatura, fotografo, violiniste per la Messa e DJ pronti a rendere unico il tuo matrimonio.</p>
+  <p>E per rendere tutto ancora più speciale, posso realizzare anche: inviti personalizzati digitali o cartacei, reminder telematici eleganti e persino un sito web dedicato al tuo matrimonio.</p>
+
+  <div class="mission-box">
+    <h2>La Nostra Missione</h2>
+    <p>Sappiamo bene che organizzare un matrimonio può essere un'esperienza emozionante, ma anche stressante e piena di domande. Spesso ci si trova a dover perdere tempo per ottenere informazioni sui costi, contattando diversi fornitori e chiedendo preventivi.</p>
+    <p>Noi di MLC vogliamo cambiare questo approccio. Crediamo che organizzare un matrimonio debba essere un'esperienza gioiosa e senza stress. Ecco perché ti offriamo un prezzo finito e comprensivo di tutto, senza sorprese o costi nascosti.</p>
+    <p>Il nostro obiettivo è renderti le cose più semplici e trasparenti possibile. Vogliamo che tu sappia esattamente quanto costa il tuo matrimonio — e poi ci occupiamo noi di tutto il resto, dalle decorazioni al catering. Lascia a noi la parte difficile, e goditi il tuo matrimonio!</p>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="contatti.html" class="button">Contattaci</a>
+  </div>
+</section>
+
 </body>
 </html>
