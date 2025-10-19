@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Servizi – MLC</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -189,6 +188,7 @@
       cursor: pointer;
       font-size: 1em;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-decoration: none;
     }
 
     .download-btn:hover {
@@ -275,81 +275,9 @@
       </ul>
     </div>
 
-    <button class="download-btn" onclick="generaPDF()">Scarica ↓</button>
+    <!-- Bottone aggiornato per scaricare il PDF esistente -->
+    <a class="download-btn" href="Tabella-MLC.pdf.pdf" download>Scarica ↓</a>
   </div>
-
-  <script>
-    async function generaPDF() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      
-      // Carica e inserisce il logo
-      const img = new Image();
-      img.src = 'img/logo.png';
-      await new Promise(resolve => { img.onload = resolve; });
-      const pageWidth = doc.internal.pageSize.getWidth();
-      const logoWidth = 40;
-      const logoX = (pageWidth - logoWidth) / 2;
-      doc.addImage(img, 'PNG', logoX, 10, logoWidth, 20);
-
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(16);
-      doc.text("Confronto Pacchetti MLC", pageWidth / 2, 40, { align: "center" });
-
-      const startY = 50;
-      const col1 = 20, col2 = 150, col3 = 180;
-
-      doc.setFontSize(12);
-      doc.text("Servizio", col1, startY);
-      doc.text("Base", col2, startY);
-      doc.text("All Inclusive", col3, startY);
-
-      doc.setFont("helvetica", "normal");
-      let y = startY + 10;
-      const rows = document.querySelectorAll("#tabella-servizi tbody tr");
-
-      rows.forEach(row => {
-        const cells = row.querySelectorAll("td");
-        const servizio = cells[0].innerText;
-        let base = cells[1].innerText === "✓" ? "SI" : "NO";
-        let allinc = cells[2].innerText === "✓" ? "SI" : "NO";
-        doc.text(servizio, col1, y);
-        doc.text(base, col2 + 10, y);
-        doc.text(allinc, col3 + 10, y);
-        y += 8;
-      });
-
-      y += 10;
-      doc.setFont("helvetica", "bold");
-      doc.text("Prezzi:", col1, y);
-      doc.setFont("helvetica", "normal");
-      y += 8;
-      doc.text("Pacchetto Base – a partire da 130 € per 100 persone", col1, y);
-      y += 6;
-      doc.text("Pacchetto All Inclusive – a partire da 150 € per 100 persone", col1, y);
-
-      y += 12;
-      doc.setFont("helvetica", "bold");
-      doc.text("Servizi Extra su Richiesta:", col1, y);
-      doc.setFont("helvetica", "normal");
-      y += 8;
-      const extra = [
-        "Auto a noleggio con autista",
-        "Dog sitter dedicato durante la giornata",
-        "Ricerca abito sposa (anche con budget di 500 €)",
-        "Evento pirotecnico per il taglio torta",
-        "Angolo selfie con cornice e gadget",
-        "Angolo foto Polaroid per ospiti",
-        "Bomboniere enogastronomiche del territorio FVG"
-      ];
-      extra.forEach(item => {
-        doc.text("- " + item, col1, y);
-        y += 6;
-      });
-
-      doc.save("Tabella_Pacchetti_MLC.pdf");
-    }
-  </script>
 
 </body>
 </html>
