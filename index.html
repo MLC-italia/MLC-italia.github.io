@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
+
 body {
   font-family:"Poppins",sans-serif;
   min-height:100vh;
@@ -18,10 +19,14 @@ body {
   align-items:center;
   justify-content:center;
   text-align:center;
-  color:#fff;
+  color:#f8f5f0;
   background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/foto-esempio.jpg') no-repeat center center/cover;
   padding:100px 20px 40px;
+  line-height:1.55;
+  text-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
+
+/* MENU */
 nav {
   position: fixed;
   top: 20px;
@@ -60,35 +65,58 @@ nav {
 .dropdown:hover .dropdown-content { display:block; }
 .dropdown:hover .dropbtn { background-color: #58725f; }
 
+/* HOME CARD */
 .home-card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
   border-radius: 20px;
   padding: 40px;
   max-width:600px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 15px rgba(255,255,255,0.1);
   animation: fadeIn 1.5s ease;
 }
 @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-.home-card img { max-width:150px; margin-bottom:20px; }
-h1 { font-weight:700; font-size:3em; color:#d4e1d5; text-shadow:1px 1px 2px rgba(0,0,0,0.7); margin-bottom:15px; }
-p { font-size:1.2em; font-weight:300; margin-bottom:25px; }
+
+.home-card img {
+  max-width:150px;
+  margin-bottom:20px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.3);
+  border-radius: 12px;
+}
+
+h1 {
+  font-weight:700;
+  font-size:3em;
+  color:#f8f5f0;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.35);
+  margin-bottom:15px;
+}
+
+p {
+  font-size:1.2em;
+  font-weight:300;
+  margin-bottom:25px;
+  color:#f8f5f0;
+  text-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
 a.button {
   display:inline-block;
   padding:12px 25px;
-  background:#6b8e77;
+  background:#7fbf87;
   color:white;
   border-radius:30px;
   text-decoration:none;
   font-weight:500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 10px rgba(127,191,135,0.3);
 }
 a.button:hover {
-  background:#58725f;
+  background:#6fa36f;
   transform:translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 12px rgba(111,163,111,0.4);
 }
+
 @media (max-width:600px) {
   h1 { font-size:2.2em; }
   .home-card { padding:30px; }
@@ -96,6 +124,7 @@ a.button:hover {
 </style>
 </head>
 <body>
+
 <nav>
   <div class="dropdown">
     <button class="dropbtn">Menu ☰</button>
@@ -114,5 +143,6 @@ a.button:hover {
   <p>Matrimoni Low Cost – rendiamo il giorno più bello accessibile a tutti, con stile e semplicità.</p>
   <a href="chi-siamo.html" class="button">Scopri di più</a>
 </div>
+
 </body>
 </html>
