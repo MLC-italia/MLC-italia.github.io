@@ -109,16 +109,27 @@ td {
   text-align: center;
 }
 
+/* --- NEON EFFECT --- */
 .yes {
-  color: #39ff14; /* verde acceso */
+  color: #39ff14; /* verde neon */
   font-weight: 700;
   font-size: 1.1em;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 30px #39ff14;
 }
 
 .no {
-  color: #ff4d4d; /* rosso acceso */
+  color: #ff4d4d; /* rosso neon */
   font-weight: 700;
   font-size: 1.1em;
+  text-shadow:
+    0 0 5px #ff4d4d,
+    0 0 10px #ff4d4d,
+    0 0 20px #ff4d4d,
+    0 0 30px #ff4d4d;
 }
 
 .price-info {
@@ -174,7 +185,12 @@ td {
 
 .extra ul li::before {
   content: "✓";
-  color: #39ff14; /* verde acceso */
+  color: #39ff14; /* verde neon */
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 30px #39ff14;
   margin-right: 8px;
 }
 
